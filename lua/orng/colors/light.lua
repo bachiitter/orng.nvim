@@ -1,5 +1,53 @@
 local M = {}
 
+---@class OrngPalette
+---@field bg string Background color
+---@field bg_dark string Darker background (sidebars, floats)
+---@field bg_highlight string Highlighted background
+---@field bg_visual string Visual selection background
+---@field fg string Foreground color
+---@field fg_muted string Muted foreground
+---@field fg_dark string Dark foreground
+---@field border string Border color
+---@field accent string Primary accent color
+---@field accent_alt string Alternative accent color
+---@field keyword string Keywords
+---@field func string Functions
+---@field string string Strings
+---@field number string Numbers
+---@field boolean string Booleans
+---@field constant string Constants
+---@field variable string Variables
+---@field variable_special string Special variables (self, this)
+---@field type string Types
+---@field property string Properties
+---@field operator string Operators
+---@field comment string Comments
+---@field tag string Tags (HTML/JSX)
+---@field attribute string Attributes
+---@field enum string Enums
+---@field error string Error diagnostic
+---@field warning string Warning diagnostic
+---@field info string Info diagnostic
+---@field hint string Hint diagnostic
+---@field success string Success color
+---@field git_add string Git added
+---@field git_change string Git changed
+---@field git_delete string Git deleted
+---@field diff_add string Diff add background
+---@field diff_change string Diff change background
+---@field diff_delete string Diff delete background
+---@field diff_text string Diff text background
+---@field term_black string Terminal black
+---@field term_red string Terminal red
+---@field term_green string Terminal green
+---@field term_yellow string Terminal yellow
+---@field term_blue string Terminal blue
+---@field term_magenta string Terminal magenta
+---@field term_cyan string Terminal cyan
+---@field term_white string Terminal white
+
+---@type OrngPalette
 M.light = {
   -- Base
   bg = "#ffffff",

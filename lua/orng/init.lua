@@ -121,6 +121,9 @@ function M.setup(opts)
   deep_merge(groups, require("orng.groups.git").get(c))
   deep_merge(groups, require("orng.groups.ui").get(c, opts_for_groups))
   deep_merge(groups, require("orng.groups.bufferline").get(c))
+  deep_merge(groups, require("orng.groups.dap").get(c))
+  deep_merge(groups, require("orng.groups.neogit").get(c, opts_for_groups))
+  deep_merge(groups, require("orng.groups.markdown").get(c))
 
   -- Apply highlight overrides
   if M.config.highlights and next(M.config.highlights) then
