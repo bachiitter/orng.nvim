@@ -1,0 +1,98 @@
+local M = {}
+
+---@param c table color palette
+---@param opts table options
+---@return table
+function M.get(c, opts)
+  local bg_dark = opts.transparent and "NONE" or c.bg_dark
+
+  return {
+    -- Neo-tree
+    NeoTreeNormal = { fg = c.fg, bg = bg_dark },
+    NeoTreeNormalNC = { fg = c.fg, bg = bg_dark },
+    NeoTreeVertSplit = { fg = c.border, bg = bg_dark },
+    NeoTreeWinSeparator = { fg = c.border, bg = bg_dark },
+    NeoTreeEndOfBuffer = { fg = bg_dark, bg = bg_dark },
+    NeoTreeRootName = { fg = c.accent, bold = true },
+    NeoTreeGitAdded = { fg = c.git_add },
+    NeoTreeGitConflict = { fg = c.error },
+    NeoTreeGitDeleted = { fg = c.git_delete },
+    NeoTreeGitIgnored = { fg = c.fg_dark },
+    NeoTreeGitModified = { fg = c.git_change },
+    NeoTreeGitUnstaged = { fg = c.git_change },
+    NeoTreeGitUntracked = { fg = c.git_add },
+    NeoTreeGitStaged = { fg = c.git_add },
+    NeoTreeIndentMarker = { fg = c.fg_dark },
+    NeoTreeExpander = { fg = c.fg_muted },
+    NeoTreeFileIcon = { fg = c.fg },
+    NeoTreeFileName = { fg = c.fg },
+    NeoTreeFileNameOpened = { fg = c.accent },
+    NeoTreeDirectoryIcon = { fg = c.accent },
+    NeoTreeDirectoryName = { fg = c.fg },
+    NeoTreeSymbolicLinkTarget = { fg = c.info },
+    NeoTreeFilterTerm = { fg = c.accent, bold = true },
+    NeoTreeFloatBorder = { fg = c.border, bg = bg_dark },
+    NeoTreeFloatTitle = { fg = c.accent, bg = bg_dark, bold = true },
+    NeoTreeTitleBar = { fg = c.bg, bg = c.accent },
+    NeoTreeCursorLine = { bg = c.bg_visual },
+    NeoTreeDimText = { fg = c.fg_dark },
+    NeoTreeDotfile = { fg = c.fg_muted },
+    NeoTreeModified = { fg = c.git_change },
+    NeoTreeTabActive = { fg = c.fg, bg = c.bg, bold = true },
+    NeoTreeTabInactive = { fg = c.fg_muted, bg = c.bg_dark },
+    NeoTreeTabSeparatorActive = { fg = c.accent, bg = c.bg },
+    NeoTreeTabSeparatorInactive = { fg = c.border, bg = c.bg_dark },
+
+    -- NvimTree
+    NvimTreeNormal = { fg = c.fg, bg = bg_dark },
+    NvimTreeNormalNC = { fg = c.fg, bg = bg_dark },
+    NvimTreeWinSeparator = { fg = c.border, bg = bg_dark },
+    NvimTreeEndOfBuffer = { fg = bg_dark, bg = bg_dark },
+    NvimTreeFolderIcon = { fg = c.accent },
+    NvimTreeFolderName = { fg = c.fg },
+    NvimTreeOpenedFolderName = { fg = c.accent },
+    NvimTreeEmptyFolderName = { fg = c.fg_muted },
+    NvimTreeSymlink = { fg = c.info },
+    NvimTreeRootFolder = { fg = c.accent, bold = true },
+    NvimTreeGitNew = { fg = c.git_add },
+    NvimTreeGitDirty = { fg = c.git_change },
+    NvimTreeGitDeleted = { fg = c.git_delete },
+    NvimTreeGitMerge = { fg = c.warning },
+    NvimTreeGitRenamed = { fg = c.git_change },
+    NvimTreeGitStaged = { fg = c.git_add },
+    NvimTreeGitIgnored = { fg = c.fg_dark },
+    NvimTreeOpenedFile = { fg = c.accent },
+    NvimTreeImageFile = { fg = c.fg },
+    NvimTreeExecFile = { fg = c.success },
+    NvimTreeSpecialFile = { fg = c.accent, underline = true },
+    NvimTreeIndentMarker = { fg = c.fg_dark },
+    NvimTreeCursorLine = { bg = c.bg_visual },
+    NvimTreeLspDiagnosticsError = { fg = c.error },
+    NvimTreeLspDiagnosticsWarning = { fg = c.warning },
+    NvimTreeLspDiagnosticsInformation = { fg = c.info },
+    NvimTreeLspDiagnosticsHint = { fg = c.hint },
+    NvimTreeWindowPicker = { fg = c.bg, bg = c.accent, bold = true },
+
+    -- Oil
+    OilDir = { fg = c.accent, bold = true },
+    OilDirIcon = { fg = c.accent },
+    OilLink = { fg = c.info },
+    OilLinkTarget = { fg = c.info, italic = true },
+    OilCopy = { fg = c.success },
+    OilMove = { fg = c.warning },
+    OilChange = { fg = c.git_change },
+    OilCreate = { fg = c.git_add },
+    OilDelete = { fg = c.git_delete },
+    OilPermissionNone = { fg = c.fg_dark },
+    OilPermissionRead = { fg = c.info },
+    OilPermissionWrite = { fg = c.warning },
+    OilPermissionExecute = { fg = c.success },
+    OilTypeDir = { fg = c.accent },
+    OilTypeFifo = { fg = c.warning },
+    OilTypeFile = { fg = c.fg },
+    OilTypeLink = { fg = c.info },
+    OilTypeSocket = { fg = c.accent },
+  }
+end
+
+return M
