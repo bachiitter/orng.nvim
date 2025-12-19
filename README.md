@@ -5,6 +5,7 @@ A warm, orange-accented Neovim colorscheme ported from the [Zed "orng" theme](ht
 ## 📸 Screenshots
 
 <!-- Add your screenshots here -->
+![Dark Theme Preview - ORNG](./screenshots/neovim-dark.png)
 <!-- ![Dark Theme](./screenshots/dark.png) -->
 <!-- ![Light Theme](./screenshots/light.png) -->
 
