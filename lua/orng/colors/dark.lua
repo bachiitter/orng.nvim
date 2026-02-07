@@ -46,6 +46,14 @@ local M = {}
 ---@field term_magenta string Terminal magenta
 ---@field term_cyan string Terminal cyan
 ---@field term_white string Terminal white
+---@field term_bright_black string Terminal bright black
+---@field term_bright_red string Terminal bright red
+---@field term_bright_green string Terminal bright green
+---@field term_bright_yellow string Terminal bright yellow
+---@field term_bright_blue string Terminal bright blue
+---@field term_bright_magenta string Terminal bright magenta
+---@field term_bright_cyan string Terminal bright cyan
+---@field term_bright_white string Terminal bright white
 
 ---@type OrngPalette
 M.dark = {
@@ -93,10 +101,10 @@ M.dark = {
   git_delete = "#e06c75",
 
   -- Diff backgrounds
-  diff_add = "#1a3d2e",
-  diff_change = "#2a2a1a",
-  diff_delete = "#3d1a1a",
-  diff_text = "#3a3a2a",
+  diff_add = "#1f2836",
+  diff_change = "#2b2b2b",
+  diff_delete = "#2b222a",
+  diff_text = "#5d4c2f",
 
   -- Terminal
   term_black = "#161a22",
@@ -107,6 +115,14 @@ M.dark = {
   term_magenta = "#EE7948",
   term_cyan = "#56b6c2",
   term_white = "#eeeeee",
+  term_bright_black = "#606060",
+  term_bright_red = "#f28b93",
+  term_bright_green = "#a3e8b0",
+  term_bright_yellow = "#f0d49a",
+  term_bright_blue = "#7cccd5",
+  term_bright_magenta = "#f5a07a",
+  term_bright_cyan = "#7cccd5",
+  term_bright_white = "#ffffff",
 }
 
 return M
