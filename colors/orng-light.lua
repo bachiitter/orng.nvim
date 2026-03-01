@@ -1,1 +1,1 @@
-require("orng").setup({ style = "light" })
+require('orng').load({ style = 'light' })
