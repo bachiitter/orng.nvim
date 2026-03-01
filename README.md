@@ -28,6 +28,7 @@ A warm, orange-accented Neovim colorscheme ported from the [Zed "orng" theme](ht
   priority = 1000,
   config = function()
     require("orng").setup()
+    vim.cmd.colorscheme("orng")
   end,
 }
 ```
@@ -36,7 +37,6 @@ A warm, orange-accented Neovim colorscheme ported from the [Zed "orng" theme](ht
 
 ```lua
 require("orng").setup({
-  style = "dark",         -- "dark" or "light"
   transparent = false,    -- Enable transparent background
   integrations = {
     lualine = true,       -- Auto-configure lualine theme
@@ -44,6 +44,9 @@ require("orng").setup({
   colors = {},            -- Override palette colors
   highlights = {},        -- Override highlight groups
 })
+
+vim.cmd.colorscheme("orng")
+-- or vim.cmd.colorscheme("orng-light")
 ```
 
 ## 🎯 Commands
@@ -84,4 +87,3 @@ See [extras/tmux/README.md](extras/tmux/README.md) for details.
 ## 📜 License
 
 MIT
-
