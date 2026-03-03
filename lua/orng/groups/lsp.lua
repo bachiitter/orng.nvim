@@ -1,5 +1,25 @@
 local M = {}
 
+---@param hex string hex color e.g. "#rrggbb"
+---@return number, number, number
+local function hexToRGB(hex)
+  hex = hex:gsub('#', '')
+  return tonumber(hex:sub(1, 2), 16), tonumber(hex:sub(3, 4), 16), tonumber(hex:sub(5, 6), 16)
+end
+
+---@param fg string foreground hex color
+---@param bg string background hex color
+---@param alpha number 0.0–1.0
+---@return string blended hex color
+local function blend(fg, bg, alpha)
+  local fr, fg_, fb = hexToRGB(fg)
+  local br, bg_, bb = hexToRGB(bg)
+  local r = math.floor(alpha * fr + (1 - alpha) * br + 0.5)
+  local g = math.floor(alpha * fg_ + (1 - alpha) * bg_ + 0.5)
+  local b = math.floor(alpha * fb + (1 - alpha) * bb + 0.5)
+  return string.format('#%02x%02x%02x', r, g, b)
+end
+
 ---@return boolean
 local function hasAdvancedSemanticTokenSupport()
   return vim.fn.has('nvim-0.11') == 1
@@ -44,6 +64,7 @@ function M.get(c)
     DiagnosticVirtualTextWarn = { fg = c.warning, bg = c.bg_highlight },
     DiagnosticVirtualTextInfo = { fg = c.info, bg = c.bg_highlight },
     DiagnosticVirtualTextHint = { fg = c.hint, bg = c.bg_highlight },
+    DiagnosticUnnecessary = { fg = blend(c.fg, c.bg, 0.75) },
   }
 
   if not hasAdvancedSemanticTokenSupport() then
