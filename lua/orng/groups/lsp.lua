@@ -64,7 +64,7 @@ function M.get(c)
     DiagnosticVirtualTextWarn = { fg = c.warning, bg = c.bg_highlight },
     DiagnosticVirtualTextInfo = { fg = c.info, bg = c.bg_highlight },
     DiagnosticVirtualTextHint = { fg = c.hint, bg = c.bg_highlight },
-    DiagnosticUnnecessary = { fg = blend(c.fg, c.bg, 0.75) },
+    DiagnosticUnnecessary = { fg = blend(c.fg, c.bg, 0.75), underline = false, undercurl = false },
   }
 
   if not hasAdvancedSemanticTokenSupport() then
